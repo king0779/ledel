@@ -35,29 +35,14 @@ $(call Device/rk3588)
 endef
 TARGET_DEVICES += armsom_sige7
 
-define Device/friendlyarm_nanopi-r6c
-$(call Device/rk3588)
-  DEVICE_VENDOR := FriendlyARM
-  DEVICE_MODEL := NanoPi R6C
-  DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-thermal 
-endef
-TARGET_DEVICES += friendlyarm_nanopi-r6c
 
-define Device/friendlyarm_nanopi-r6s
+define Device/cyber3588-aib
 $(call Device/rk3588)
-  DEVICE_VENDOR := FriendlyARM
-  DEVICE_MODEL := NanoPi R6S
-  DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-thermal 
+  DEVICE_MODEL := cyber3588-aib
+  SUPPORTED_DEVICES += cyber,cyber3588-aib
+  DEVICE_DTS := rk3588-cyber3588-aib
 endef
-TARGET_DEVICES += friendlyarm_nanopi-r6s
-
-define Device/friendlyarm_nanopi-r6t
-$(call Device/rk3588)
-  DEVICE_VENDOR := FriendlyARM
-  DEVICE_MODEL := NanoPC T6
-  DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-thermal 
-endef
-TARGET_DEVICES += friendlyarm_nanopi-r6t
+TARGET_DEVICES += cyber3588-aib
 
 define Device/mangopi_m28k
 $(call Device/rk3528)
